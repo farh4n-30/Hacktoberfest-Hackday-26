@@ -7,11 +7,10 @@
 A bilingual (English / বাংলা) diabetes companion for Bangladesh, powered by open-weight **Gemma**.<br>
 It catches the quiet warning signs in your feet, eyes, kidneys, nerves and heart, and turns them into a calm, cautious report to bring to your doctor.
 
-[Live demo](<STREAMLIT_URL>) &nbsp;|&nbsp; [Demo video](<VIDEO_URL>) &nbsp;|&nbsp; MIT License &nbsp;|&nbsp; Built solo in one Hack Day
+[Live demo](<[https://diabetesminus.streamlit.app/>) &nbsp;|&nbsp;|&nbsp; MIT License &nbsp;|&nbsp; Built solo in one Hack Day
 
 </div>
 
-<!-- Screenshots: Dashboard (Rahim) | Safety screen | Report -->
 
 ---
 
@@ -139,6 +138,6 @@ A prototype built in one day. Not clinically validated, not a medical device. Th
 
 ---
 
-Built by **Farhan Bin Mir Hassan** for Hacktoberfest Hack Day Dhaka, entered for **Best Use of Gemma** and **Best Open-Source AI Project**. Statistics: IDF Diabetes Atlas. Released under the MIT License.
+Built by **Farhan Bin Mir Hassan** for Hacktoberfest Hack Day Dhaka, entered for **Best Use of Gemma**. Statistics: IDF Diabetes Atlas. Released under the MIT License.
 
 <sub>Educational prototype. It does not diagnose, treat or replace professional care. In an emergency, call 999.</sub>
