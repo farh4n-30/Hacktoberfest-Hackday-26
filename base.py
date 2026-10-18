@@ -223,7 +223,7 @@ def _profile_ok(p):
     if p.get("units") not in ("mgdl", "mmol"):
         return False
     t = p.get("target_range")
-    if not (isinstance(t, dict) and _num(t.get("low")) and _num(t.get("high")) and t["low"] < t["high"]) and 18 <= t["low"] < t["high"] <= 600):  
+    if not (isinstance(t, dict) and _num(t.get("low")) and _num(t.get("high")) and 18 <= t["low"] < t["high"] <= 600):  
         return False
     meds = p.get("medicines", [])
     if not (isinstance(meds, list) and all(
