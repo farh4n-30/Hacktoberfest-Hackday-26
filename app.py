@@ -1,7 +1,7 @@
 """Entry point: page config, language gate, header, sidebar, routing. No logic beyond routing."""
 import streamlit as st
 
-st.set_page_config(page_title="APP_NAME", layout="centered", initial_sidebar_state="auto")  # must be first
+st.set_page_config(page_title="Diabetes-", layout="centered", initial_sidebar_state="auto")  # must be first
 
 from base import APP_NAME, EMERGENCY_NUMBER, LANGS, L, P, go, init_state, lang, set_lang
 from engine import ensure_defaults
