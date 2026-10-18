@@ -7,7 +7,7 @@
 A bilingual (English / বাংলা) diabetes companion for Bangladesh, powered by open-weight **Gemma**.<br>
 It catches the quiet warning signs in your feet, eyes, kidneys, nerves and heart, and turns them into a calm, cautious report to bring to your doctor.
 
-[Live demo](<[https://diabetesminus.streamlit.app/>) &nbsp;|&nbsp;|&nbsp; MIT License &nbsp;|&nbsp; Built solo in one Hack Day
+[Live demo](https://diabetesminus.streamlit.app/) &nbsp;|&nbsp;|&nbsp; MIT License &nbsp;|&nbsp; Built solo in one Hack Day
 
 </div>
 
@@ -85,8 +85,7 @@ flowchart LR
 
 Diabetes- runs on **Gemma** through a one-line provider switch in `ai.py`:
 
-- `gemini` (default): Gemma through the Gemini API, used in the hosted demo.
-- `ollama`: the same prompts against **Gemma running locally**, so health text can stay on the device.
+- `gemma` : Gemma through the Gemma API, used in the hosted demo.
 
 Why open weights matter here: health data is intimate, connectivity is uneven, and a tool for Bangladesh shouldn't depend on one vendor's terms. An open model can be hosted by a hospital, run on a clinic laptop, or fine-tuned for Bangla medical language, while the safety rules around it stay unchanged and auditable. The whole project is **MIT licensed** so clinicians, NGOs and developers can inspect it, fix it and build on it.
 
@@ -110,7 +109,7 @@ Why open weights matter here: health data is intimate, connectivity is uneven, a
 
 ## Try it in 2 minutes
 
-1. Open the [live demo](<STREAMLIT_URL>) and choose English or বাংলা.
+1. Open the [live demo](https://diabetesminus.streamlit.app/) and choose English or বাংলা.
 2. Load **Rahim**. His logs and concern trackers are on the dashboard.
 3. Open "I'm skipping a meal / going to sleep after insulin". It says **no doctor plan yet**.
 4. Use "I went to the doctor today" and save a plan. The safety screen now shows it word for word.
