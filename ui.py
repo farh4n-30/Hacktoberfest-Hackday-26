@@ -1,4 +1,3 @@
-"""Presentation layer: CSS constant + helpers. Imports base and content_learn only. No JavaScript."""
 from contextlib import contextmanager
 from urllib.parse import quote
 
@@ -9,7 +8,6 @@ from content_learn import GLOSSARY
 
 QUOTA_HOURS = 4
 
-# ---------------------------------------------------------------- shared labels
 NAV = {
     "dashboard": {"en": "Dashboard", "bn": "ড্যাশবোর্ড"},
     "symptom": {"en": "Symptom guide", "bn": "উপসর্গ গাইড"},
@@ -46,7 +44,6 @@ def lbl(key):
     return L(LABELS.get(key))
 
 
-# ---------------------------------------------------------------- CSS (the only unsafe_allow_html use)
 CSS = """@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
 :root{--bg:#F5F5F7;--card:#FFFFFF;--text:#1D1D1F;--muted:#6E6E73;--hair:rgba(0,0,0,.08);--accent:#0F766E;--danger:#C62828;--warn-bg:#FFF4E0;--warn:#B45309;--info-bg:#EEF5FF;--info:#0A5FBF;--ok-bg:#EEF7F0;--ok:#2F6B46;--r1:10px;--r2:16px;--shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06);--ease:cubic-bezier(.2,.8,.2,1);--anim:rise 220ms var(--ease)}
 @keyframes rise{from{opacity:0;transform:translateY(6px) scale(.99)}to{opacity:1;transform:none}}
@@ -93,7 +90,6 @@ _VARS = {
 
 
 def inject_css():
-    """Call once at the top of every run (it also resets the key counter used by card/badge)."""
     st.session_state["_ui_n"] = 0
     st.markdown(f"<style>{CSS}{_VARS.get(lang(), _VARS['en'])}</style>", unsafe_allow_html=True)
 
@@ -104,7 +100,11 @@ def _n():
     return n
 
 
-# ---------------------------------------------------------------- helpers
+def sticker():
+    _, c = st.columns([2, 1])
+    c.image("assets/sticker.png", use_container_width=True)
+
+
 @contextmanager
 def card():
     with st.container(border=True, key=f"card_{_n()}"):
@@ -151,5 +151,5 @@ def link_button(label, url, kind="secondary"):
     label = L(label)
     try:
         st.link_button(label, url, type="primary" if kind == "primary" else "secondary")
-    except Exception:  # scheme rejected: plain markdown link
+    except Exception:
         st.markdown(f"[{label}]({quote(str(url), safe=':/?&=#+@%')})")
